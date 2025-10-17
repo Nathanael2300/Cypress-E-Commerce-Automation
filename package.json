@@ -1,0 +1,28 @@
+{
+  "name": "cypress-e-commerce-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathanael2300/Cypress-E-Commerce-Automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nathanael2300/Cypress-E-Commerce-Automation/issues"
+  },
+  "homepage": "https://github.com/Nathanael2300/Cypress-E-Commerce-Automation#readme",
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "cypress": "^15.4.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0"
+  }
+}
