@@ -6,7 +6,7 @@ let data = {
     postalcode: faker.location.zipCode(),
 };
 
-describe('', () => {
+describe('Checkout feature', () => {
     beforeEach(() => {
         cy.visit('/');
     });
@@ -38,7 +38,7 @@ describe('', () => {
             }
         }
     }
-    it('', () => {
+    it('Should finish the checkout', () => {
         cy.fixture('login').then((user) => {
             const check = new checkOutPage();
 

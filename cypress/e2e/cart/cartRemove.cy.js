@@ -25,7 +25,7 @@ describe('Cart feature', () => {
       }
     }
   
-    it('must remove the product from the cart', () => {
+    it('Should remove the product from the cart', () => {
       cy.fixture('login').then((user) => {
         const cart = new cartPage();
   
