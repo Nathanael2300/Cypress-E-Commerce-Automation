@@ -14,6 +14,6 @@ module.exports = defineConfig({
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;
     },
-  baseUrl: "https://www.saucedemo.com"
+    baseUrl: "https://www.saucedemo.com"
   },
 });

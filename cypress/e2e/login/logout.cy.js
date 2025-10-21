@@ -19,7 +19,9 @@ describe('Logout feature', () => {
       }
   
       buttonClick(element) {
-        cy.get(element).click();
+        return function (condition) {
+          cy.get(element).contains(condition).click();
+        }
       }
     }
   
@@ -30,12 +32,12 @@ describe('Logout feature', () => {
         login.checkfield(".login_logo")("have.text")("Swag Labs");
         login.fillfield("#user-name")(user.loginValid.username);
         login.fillfield("#password")(user.loginValid.password);
-        login.buttonClick("#login-button");
-        login.checkfield(".title")("have.text")("Products");
+        login.buttonClick("input")("Login");
+        login.checkfield(".title")("contain.text")("Products");
   
-        login.buttonClick("#react-burger-menu-btn");
-        login.buttonClick("#logout_sidebar_link");
-        login.checkfield(".login_logo")("have.text")("Swag Labs");
+        login.buttonClick("button")("Open Menu");
+        login.buttonClick("a")("Logout");
+        login.checkfield(".login_logo")("contain.text")("Swag Labs");
       });
     });
   });

@@ -19,7 +19,9 @@ describe('Login feature', () => {
     }
 
     buttonClick(element) {
-      cy.get(element).click();
+      return function (condition) {
+        cy.get(element).contains(condition).click();
+      }
     }
   }
 
@@ -30,8 +32,8 @@ describe('Login feature', () => {
       login.checkfield(".login_logo")("have.text")("Swag Labs");
       login.fillfield("#user-name")(user.loginValid.username);
       login.fillfield("#password")(user.loginValid.password);
-      login.buttonClick("#login-button");
-      login.checkfield(".title")("have.text")("Products");
+      login.buttonClick("input")("Login");
+      login.checkfield(".title")("contain.text")("Products");
     });
   });
 });
