@@ -1,3 +1,5 @@
+import 'cypress-mochawesome-reporter/register';
+
 describe('Cart feature', () => {
     beforeEach(() => {
       cy.visit('/');
@@ -48,4 +50,7 @@ describe('Cart feature', () => {
         cart.checkfield(".inventory_item_name")("not.exist")("Sauce Labs Bolt T-Shirt");
       });
     }); 
+    afterEach(() => {
+      cy.screenshot(); 
+    });
   });

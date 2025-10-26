@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import 'cypress-mochawesome-reporter/register';
 
 let data = {
     firstname: faker.person.firstName(),
@@ -93,4 +94,7 @@ describe('Checkout feature', () => {
             check.checkfield(".complete-text")("contain.text")("Your order has been dispatched, and will arrive just as fast as the pony can get there!");
         });
     });
+    afterEach(() => {
+        cy.screenshot();
+      });
 });

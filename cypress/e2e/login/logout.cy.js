@@ -1,3 +1,5 @@
+import 'cypress-mochawesome-reporter/register';
+
 describe('Logout feature', () => {
     beforeEach(() => {
       cy.visit('/');
@@ -39,6 +41,9 @@ describe('Logout feature', () => {
         login.buttonClick("a")("Logout");
         login.checkfield(".login_logo")("contain.text")("Swag Labs");
       });
+    });
+    afterEach(() => {
+      cy.screenshot(); 
     });
   });
   

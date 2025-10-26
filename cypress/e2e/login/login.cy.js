@@ -1,3 +1,5 @@
+import 'cypress-mochawesome-reporter/register';
+
 describe('Login feature', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -35,5 +37,8 @@ describe('Login feature', () => {
       login.buttonClick("input")("Login");
       login.checkfield(".title")("contain.text")("Products");
     });
+  });
+  afterEach(() => {
+    cy.screenshot(); 
   });
 });
