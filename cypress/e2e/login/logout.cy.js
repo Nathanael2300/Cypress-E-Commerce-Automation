@@ -29,17 +29,17 @@ describe('Logout feature', () => {
   
     it('Should log-in and log-out successfully', () => {
       cy.fixture('login').then((user) => {
-        const login = new loginPage();
+        const loginout = new loginPage();
   
-        login.checkfield(".login_logo")("have.text")("Swag Labs");
-        login.fillfield("#user-name")(user.loginValid.username);
-        login.fillfield("#password")(user.loginValid.password);
-        login.buttonClick("input")("Login");
-        login.checkfield(".title")("contain.text")("Products");
+        loginout.checkfield(".login_logo")("have.text")("Swag Labs");
+        loginout.fillfield("#user-name")(user.loginValid.username);
+        loginout.fillfield("#password")(user.loginValid.password);
+        loginout.buttonClick("input")("Login");
+        loginout.checkfield(".title")("contain.text")("Products");
   
-        login.buttonClick("button")("Open Menu");
-        login.buttonClick("a")("Logout");
-        login.checkfield(".login_logo")("contain.text")("Swag Labs");
+        loginout.buttonClick("button")("Open Menu");
+        loginout.buttonClick("a")("Logout");
+        loginout.checkfield(".login_logo")("contain.text")("Swag Labs");
       });
     });
     afterEach(() => {
